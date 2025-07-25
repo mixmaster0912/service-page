@@ -351,6 +351,61 @@
             opacity: 0.7;
         }
 
+        /* Equipment Section */
+        .equipment {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .equipment-list {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .equipment-item {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .equipment-item:hover {
+            background: rgba(78, 205, 196, 0.1);
+            border-color: rgba(78, 205, 196, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .equipment-link {
+            color: #ffffff !important;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: color 0.3s ease;
+        }
+
+        .equipment-link:link,
+        .equipment-link:visited,
+        .equipment-link:active {
+            color: #ffffff !important;
+        }
+
+        .equipment-link:hover {
+            color: #4ecdc4 !important;
+        }
+
+        @media (max-width: 768px) {
+            .equipment-item {
+                font-size: 1rem;
+                padding: 10px 15px;
+                margin-bottom: 12px;
+            }
+        }
+
         /* Process Section */
         .process {
             padding: 100px 0;
@@ -639,6 +694,7 @@
             <ul class="nav-links">
                 <li><a href="#services">서비스</a></li>
                 <li><a href="#comparison">서비스 비교</a></li>
+                <li><a href="#equipment">사용 장비</a></li>
                 <li><a href="#process">진행과정</a></li>
                 <li><a href="#portfolio">포트폴리오</a></li>
                 <li><a href="#contact">연락처</a></li>
@@ -758,6 +814,35 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="equipment" class="equipment">
+        <div class="container">
+            <h2 class="section-title">사용 장비</h2>
+            <div class="equipment-list">
+                <div class="equipment-item">
+                    <a href="https://smartstore.naver.com/funnyufo/products/9569794192" target="_blank" class="equipment-link">Apogee Symphony i/o mk2 2x6se</a>
+                </div>
+                <div class="equipment-item">
+                    <a href="https://smartstore.naver.com/funnyufo/products/6416385174" target="_blank" class="equipment-link">Rupert NEVE design Shelford Channel</a>
+                </div>
+                <div class="equipment-item">
+                    <a href="https://smartstore.naver.com/funnyufo/products/6459213516" target="_blank" class="equipment-link">Focusrite ISA TWO</a>
+                </div>
+                <div class="equipment-item">
+                    <a href="https://gearlounge.com/shop/eq1" target="_blank" class="equipment-link">Zähl EQ1</a>
+                </div>
+                <div class="equipment-item">
+                    <a href="https://gearlounge.com/shop/heritage_audio_grandchild_670_500" target="_blank" class="equipment-link">Heritage Audio Grandchild 670</a>
+                </div>
+                <div class="equipment-item">
+                    <a href="https://gearlounge.com/shop/ngbuscomp" target="_blank" class="equipment-link">Wes Audio NgBusComp</a>
+                </div>
+                <div class="equipment-item">
+                    <a href="https://smartstore.naver.com/funnyufo/products/9873492097" target="_blank" class="equipment-link">SPL Vitalizer mk3-T</a>
+                </div>
             </div>
         </div>
     </section>
