@@ -1,2 +1,895 @@
-<h1>Hello Web.</h1>
-<p style="color: green;">이 곳이 내 사이트인가?</p>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎵프로페셔널 믹싱 & 마스터링 서비스</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d1b69 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #4ecdc4;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="grad" cx="50%" cy="50%"><stop offset="0%" style="stop-color:%23ff6b6b;stop-opacity:0.1"/><stop offset="100%" style="stop-color:%234ecdc4;stop-opacity:0.05"/></radialGradient></defs><circle cx="500" cy="500" r="400" fill="url(%23grad)"/></svg>') no-repeat center;
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.5);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #4ecdc4;
+        }
+
+        .service-card p {
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-features li {
+            padding: 5px 0;
+            opacity: 0.8;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+
+        /* Service Comparison Section */
+        .comparison {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05));
+        }
+
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2));
+            padding: 25px 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #4ecdc4;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table th:first-child {
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(45, 27, 105, 0.3));
+            color: #ffffff;
+            text-align: left;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .comparison-table td:first-child {
+            background: rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+            color: #ffffff;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table td:not(:first-child) {
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        .check-icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .check-icon::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .comparison-feature {
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .pricing-card {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: #4ecdc4;
+            transform: scale(1.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .pricing-card.featured:hover {
+            transform: translateY(-5px) scale(1.07);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4ecdc4;
+            margin-bottom: 10px;
+        }
+
+        .price-unit {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #4ecdc4;
+        }
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .portfolio-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(78, 205, 196, 0.3);
+        }
+
+        .portfolio-item iframe {
+            width: 100%;
+            height: 140px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-item h4 {
+            font-size: 1rem;
+            color: #4ecdc4;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .portfolio-item p {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(45, 27, 105, 0.8), rgba(0, 0, 0, 0.8));
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #4ecdc4;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                overflow-x: auto;
+            }
+
+            .comparison-table table {
+                min-width: 600px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 15px 10px;
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th:first-child,
+            .comparison-table td:first-child {
+                min-width: 140px;
+            }
+
+                        .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .portfolio-item iframe {
+                height: 120px;
+            }
+        }
+
+        /* Audio Visualizer */
+        .audio-visualizer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: end;
+            gap: 3px;
+            z-index: 1000;
+        }
+
+        .bar {
+            width: 4px;
+            background: linear-gradient(to top, #ff6b6b, #4ecdc4);
+            border-radius: 2px;
+        }
+
+        .bar:nth-child(1) { height: 20px; }
+        .bar:nth-child(2) { height: 30px; }
+        .bar:nth-child(3) { height: 25px; }
+        .bar:nth-child(4) { height: 35px; }
+        .bar:nth-child(5) { height: 15px; }
+
+        .kakao-link {
+            color: #ffffff !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid transparent;
+        }
+
+        .kakao-link:link {
+            color: #ffffff !important;
+        }
+
+        .kakao-link:visited {
+            color: #ffffff !important;
+        }
+
+        .kakao-link:hover {
+            color: #4ecdc4 !important; /* 호버 시에만 색상 변경 */
+            border-bottom: 1px solid #4ecdc4;
+        }
+
+        .kakao-link:active {
+            color: #ffffff !important;
+        }
+
+        .portfolio {
+            
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">🎵 MixMaster</div>
+            <ul class="nav-links">
+                <li><a href="#services">서비스</a></li>
+                <li><a href="#comparison">서비스 비교</a></li>
+                <li><a href="#process">진행과정</a></li>
+                <li><a href="#portfolio">포트폴리오</a></li>
+                <li><a href="#contact">연락처</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>당신이 선택할 수 있는<br>가장 합리적인 서비스</h1>
+                <p>공들여 녹음한 소중한 노래를 전문가의 손에 맡기세요.<br>의도하신 바이브와 감정을 섬세한 터치로 극대화합니다.<br>모든 작업은 전문적인 작업 환경에서 정확하게 이루어집니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">서비스 안내</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎚️</div>
+                    <h3>베이직 믹싱</h3>
+                    <div class="price">150,000원<span class="price-unit">/곡</span></div>
+                    <ul class="service-features">
+                        <li>퀄리티 대비 매우 합리적인 가격</li>
+                        <li>간단하며 빠름(3~7일)</li>
+                        <li>5회 수정</li>
+                        <li>프리미엄과 동일한 QC</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎛️</div>
+                    <h3>프리미엄 믹싱</h3>
+                    <div class="price">400,000원<span class="price-unit">/곡</span></div>
+                    <ul class="service-features">
+                        <li>한층 높은 타협 없는 퀄리티</li>
+                        <li>고가의 하드웨어 장비 사용</li>
+                        <li>실시간 믹싱작업 참관 가능</li>
+                        <li>72시간 내에 영상제작용 가믹싱본 제공</li>
+                        <li>부분출력(라이브MR및 아카펠라) 제공</li>
+                        <li>무제한 수정</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comparison" class="comparison">
+        <div class="container">
+            <h2 class="section-title">서비스 비교</h2>
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>베이직 믹싱</th>
+                            <th>프리미엄 믹싱</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>음정 및 박자 보정</td>
+                            <td><div class="check-icon"></div></td>
+                            <td><div class="check-icon"></div></td>
+                        </tr>
+                        <tr>
+                            <td>마스터링</td>
+                            <td><div class="check-icon"></div></td>
+                            <td><div class="check-icon"></div></td>
+                        </tr>
+                        <tr>
+                            <td>동일한 QC 기준</td>
+                            <td><div class="check-icon"></div></td>
+                            <td><div class="check-icon"></div></td>
+                        </tr>
+                        <tr>
+                            <td>무제한 트랙, 인원수</td>
+                            <td><div class="comparison-feature">문의 시 추가비용 안내</div></td>
+                            <td><div class="check-icon"></div></td>
+                        </tr>
+                        <tr>
+                            <td>실시간 작업 참관 및<br>실시간 의견 공유</td>
+                            <td><div class="comparison-feature">-</div></td>
+                            <td><div class="check-icon"></div></td>
+                        </tr>
+                        <tr>
+                            <td>영상제작용 가믹싱본<br>미리 제공</td>
+                            <td><div class="comparison-feature">-</div></td>
+                            <td><div class="check-icon"></div></td>
+                        </tr>
+                        <tr>
+                            <td>무제한 수정</td>
+                            <td><div class="comparison-feature">5회 (초과 시 비용 발생)</div></td>
+                            <td><div class="check-icon"></div></td>
+                        </tr>
+                        <tr>
+                            <td>라이브 MR, 아카펠라 등<br>부분출력 제공</td>
+                            <td><div class="comparison-feature">비용 발생</div></td>
+                            <td><div class="check-icon"></div></td>
+                        </tr>
+                        <tr>
+                            <td>권장 사용 범위</td>
+                            <td><div class="comparison-feature">커버곡 활동</div></td>
+                            <td><div class="comparison-feature">고퀄리티 커버곡 활동 또는<br>오리지널곡/자작곡 음원 발표 또는 발매</div></td>
+                        </tr>
+                        <tr>
+                            <td>신청시 트랙 종류</td>
+                            <td><div class="comparison-feature">MR 파일과 보컬 녹음본 파일</div></td>
+                            <td><div class="comparison-feature">MR 파일과 보컬 녹음본 파일 또는 멀티트랙(스템) 파일</div></td>
+                        </tr>
+                        <tr>
+                            <td>작업 방식</td>
+                            <td><div class="comparison-feature">소프트웨어만 사용하는<br>In the box 믹싱</div></td>
+                            <td><div class="comparison-feature">고가의 하드웨어 장비를 사용하는<br>하이브리드 믹싱</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">진행 과정</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>문의 및 파일 확인</h4>
+                    <p>문의 시 배부해드린 출력<br>가이드라인대로 파일을<br>출력해주세요.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>견적 안내 및<br>입금 확인</h4>
+                    <p>입금 확인이 된 시점부터 작업이 시작됩니다.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>작업 진행</h4>
+                    <p>프리미엄 서비스의 경우<br>작업 참관이 가능하며<br>실시간으로 의견을<br>반영합니다.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>초본 완성</h4>
+                    <p>작업이 완료된 1차 파일을 전달하고 필요시 수정 과정을 거칩니다.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>최종본 완성</h4>
+                    <p>최종본 승인 후 부분 출력을 요청하실 수 있습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">포트폴리오</h2>
+            <p style="text-align: center; margin-bottom: 50px; opacity: 0.9;">
+                저희가 작업한 곡들을 직접 들어보세요
+            </p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4>커버곡 믹싱 작업</h4>
+                    <p>베이직 믹싱 서비스</p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4>오리지널곡 믹싱</h4>
+                    <p>프리미엄 믹싱 서비스</p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4>밴드 사운드 믹싱</h4>
+                    <p>프리미엄 믹싱 서비스</p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4>어쿠스틱 발라드</h4>
+                    <p>베이직 믹싱 서비스</p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4>힙합 트랙 믹싱</h4>
+                    <p>프리미엄 믹싱 서비스</p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4>R&B 스타일 믹싱</h4>
+                    <p>프리미엄 믹싱 서비스</p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4>록 장르 믹싱</h4>
+                    <p>베이직 믹싱 서비스</p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4>EDM 트랙 믹싱</h4>
+                    <p>프리미엄 믹싱 서비스</p>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">연락처</h2>
+            <p>프로젝트 문의나 견적 요청은 언제든지 연락해주세요.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <h4>디스코드</h4>
+                    <p>mixmaster</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
+                     <h4>카카오톡</h4>
+                     <p><a href="https://open.kakao.com/o/sgaqv6y" target="_blank" class="kakao-link">
+                            <span class="kakao-icon">💬</span>@MixMaster
+                        </a>
+                        <br>
+                        <small style="opacity: 0.7;">클릭하면 이동합니다</small>
+                    </p>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🎧</div>
+                     <h4>믹싱 레슨 안내</h4>
+                     <p><a href="https://blog.naver.com/mixmaster_mixmaster/223923354041" target="_blank" class="kakao-link">
+                            <span class="kakao-icon">🎧</span>@LESSON
+                        </a>
+                        <br>
+                        <small style="opacity: 0.7;">클릭하면 이동합니다</small>
+                    </p>
+                </div>                
+                
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <h4>운영시간</h4>
+                    <p>매일 PM 05:00 부터 AM 04:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audio Visualizer -->
+    <div class="audio-visualizer">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
