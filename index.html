@@ -516,6 +516,70 @@
             }
         }
 
+        /* Refund Section */
+        .refund {
+            padding: 60px 0 40px 0;
+            background: rgba(0, 0, 0, 0.6);
+            text-align: center;
+        }
+
+        .refund h3 {
+            font-size: 1.5rem;
+            color: #4ecdc4;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .refund-policy {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .refund-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            min-width: 120px;
+        }
+
+        .refund-stage {
+            font-size: 0.9rem;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+
+        .refund-rate {
+            font-size: 1rem;
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .refund-notice {
+            font-size: 0.8rem;
+            color: #ffffff;
+            opacity: 0.6;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .refund-policy {
+                gap: 20px;
+            }
+            
+            .refund-item {
+                min-width: 100px;
+            }
+            
+            .refund-notice {
+                font-size: 0.75rem;
+            }
+        }
+        
         /* Audio Visualizer */
         .audio-visualizer {
             position: fixed;
@@ -864,6 +928,27 @@
                     <p>매일 PM 05:00 부터 AM 04:00</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="refund" class="refund">
+        <div class="container">
+            <h3>환불 규정</h3>
+            <div class="refund-policy">
+                <div class="refund-item">
+                    <span class="refund-stage">작업 시작 전</span>
+                    <span class="refund-rate">전액 환불</span>
+                </div>
+                <div class="refund-item">
+                    <span class="refund-stage">작업 시작 후</span>
+                    <span class="refund-rate">50% 환불</span>
+                </div>
+                <div class="refund-item">
+                    <span class="refund-stage">초본 전달 후</span>
+                    <span class="refund-rate">환불 불가</span>
+                </div>
+            </div>
+            <p class="refund-notice">작업 시작 시점은 프로젝트 파일 개설 시점입니다.</p>
         </div>
     </section>
 
