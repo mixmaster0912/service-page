@@ -173,11 +173,6 @@
             transition: left 0.5s ease;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
         .service-icon {
             font-size: 3rem;
             margin-bottom: 20px;
@@ -200,107 +195,21 @@
 
         .service-features {
             list-style: none;
-            text-align: left;
         }
 
         .service-features li {
             padding: 5px 0;
             opacity: 0.8;
-            position: relative;
-            padding-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
         }
 
         .service-features li::before {
             content: '✓';
-            position: absolute;
-            left: 0;
             color: #4ecdc4;
             font-weight: bold;
-        }
-
-        /* Service Comparison Section */
-        .comparison {
-            padding: 100px 0;
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.05), rgba(78, 205, 196, 0.05));
-        }
-
-        .comparison-table {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            margin-top: 40px;
-        }
-
-        .comparison-table table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .comparison-table th {
-            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2));
-            padding: 25px 20px;
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #4ecdc4;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .comparison-table th:first-child {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(45, 27, 105, 0.3));
-            color: #ffffff;
-            text-align: left;
-            font-size: 1.1rem;
-        }
-
-        .comparison-table td {
-            padding: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .comparison-table tr:hover td {
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .comparison-table td:first-child {
-            background: rgba(0, 0, 0, 0.2);
-            font-weight: 600;
-            color: #ffffff;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .comparison-table td:not(:first-child) {
-            text-align: center;
-            font-size: 0.95rem;
-        }
-
-        .check-icon {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            background: linear-gradient(45deg, #4ecdc4, #45b7d1);
-            border-radius: 50%;
-            position: relative;
-            margin: 0 auto;
-        }
-
-        .check-icon::after {
-            content: '✓';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .comparison-feature {
-            line-height: 1.4;
-            opacity: 0.9;
         }
 
         /* Pricing Section */
@@ -329,14 +238,6 @@
         .pricing-card.featured {
             border-color: #4ecdc4;
             transform: scale(1.05);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px) scale(1.02);
-        }
-
-        .pricing-card.featured:hover {
-            transform: translateY(-5px) scale(1.07);
         }
 
         .price {
@@ -466,12 +367,6 @@
             overflow: hidden;
         }
 
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border-color: rgba(78, 205, 196, 0.3);
-        }
-
         .portfolio-item iframe {
             width: 100%;
             height: 140px;
@@ -511,11 +406,6 @@
             border-radius: 15px;
             padding: 30px;
             transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
         }
 
         .contact-icon {
@@ -693,10 +583,10 @@
             <div class="logo">🎵 MixMaster</div>
             <ul class="nav-links">
                 <li><a href="#services">서비스</a></li>
-                <li><a href="#comparison">서비스 비교</a></li>
+                <li><a href="#portfolio">포트폴리오</a></li>
                 <li><a href="#equipment">사용 장비</a></li>
                 <li><a href="#process">진행과정</a></li>
-                <li><a href="#portfolio">포트폴리오</a></li>
+                <li><a href="#equipment">사용 장비</a></li>
                 <li><a href="#contact">연락처</a></li>
             </ul>
         </nav>
@@ -705,7 +595,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>여러분이 선택할 수 있는<br>가장 합리적인 서비스</h1>
+                <h1>프로페셔널한 활동에 적합한<br>최고 수준의 서비스를 선보입니다</h1>
                 <p>공들여 녹음한 소중한 노래를 전문가의 손에 맡기세요.<br>의도하신 바이브와 감정을 섬세한 터치로 극대화합니다.<br>모든 작업은 전문적인 작업 환경에서 정확하게 이루어집니다.</p>
             </div>
         </div>
@@ -716,24 +606,12 @@
             <h2 class="section-title">서비스 안내</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🎚️</div>
-                    <h3>베이직 믹싱</h3>
-                    <div class="price">150,000원<span class="price-unit">/곡</span></div>
-                    <ul class="service-features">
-                        <li>퀄리티 대비 매우 합리적인 가격</li>
-                        <li>간단하며 빠름(3~7일)</li>
-                        <li>5회 수정</li>
-                        <li>프리미엄과 동일한 QC</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card">
                     <div class="service-icon">🎛️</div>
-                    <h3>프리미엄 믹싱</h3>
+                    <h3>에디팅이 포함 된 믹싱/마스터링</h3>
                     <div class="price">400,000원<span class="price-unit">/곡</span></div>
                     <ul class="service-features">
-                        <li>한층 높은 타협 없는 퀄리티</li>
-                        <li>고가의 하드웨어 장비 사용</li>
+                        <li>트랙 갯수 제한 X</li>
+                        <li>보컬 인원수 제한 X</li>
                         <li>실시간 믹싱작업 참관 가능</li>
                         <li>영상제작용 보컬 보정본 미리 제공</li>
                         <li>부분출력(라이브MR및 아카펠라) 제공</li>
@@ -744,76 +622,129 @@
         </div>
     </section>
 
-    <section id="comparison" class="comparison">
+    <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">서비스 비교</h2>
-            <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>베이직 믹싱</th>
-                            <th>프리미엄 믹싱</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>음정 및 박자 보정</td>
-                            <td><div class="check-icon"></div></td>
-                            <td><div class="check-icon"></div></td>
-                        </tr>
-                        <tr>
-                            <td>마스터링</td>
-                            <td><div class="check-icon"></div></td>
-                            <td><div class="check-icon"></div></td>
-                        </tr>
-                        <tr>
-                            <td>동일한 QC 기준</td>
-                            <td><div class="check-icon"></div></td>
-                            <td><div class="check-icon"></div></td>
-                        </tr>
-                        <tr>
-                            <td>무제한 트랙, 인원수</td>
-                            <td><div class="comparison-feature">문의 시 추가비용 안내</div></td>
-                            <td><div class="check-icon"></div></td>
-                        </tr>
-                        <tr>
-                            <td>실시간 작업 참관 및<br>실시간 의견 공유</td>
-                            <td><div class="comparison-feature">-</div></td>
-                            <td><div class="check-icon"></div></td>
-                        </tr>
-                        <tr>
-                            <td>영상제작용 보컬 보정본<br>미리 제공</td>
-                            <td><div class="comparison-feature">-</div></td>
-                            <td><div class="check-icon"></div></td>
-                        </tr>
-                        <tr>
-                            <td>무제한 수정</td>
-                            <td><div class="comparison-feature">5회 (초과 시 비용 발생)</div></td>
-                            <td><div class="check-icon"></div></td>
-                        </tr>
-                        <tr>
-                            <td>라이브 MR, 아카펠라 등<br>부분출력 제공</td>
-                            <td><div class="comparison-feature">비용 발생</div></td>
-                            <td><div class="check-icon"></div></td>
-                        </tr>
-                        <tr>
-                            <td>권장 사용 범위</td>
-                            <td><div class="comparison-feature">커버곡 활동</div></td>
-                            <td><div class="comparison-feature">고퀄리티 커버곡 활동 또는<br>오리지널곡/자작곡 음원 발표 또는 발매</div></td>
-                        </tr>
-                        <tr>
-                            <td>신청시 트랙 종류</td>
-                            <td><div class="comparison-feature">MR 파일과 보컬 녹음본 파일</div></td>
-                            <td><div class="comparison-feature">MR 파일과 보컬 녹음본 파일 또는 멀티트랙(스템) 파일</div></td>
-                        </tr>
-                        <tr>
-                            <td>작업 방식</td>
-                            <td><div class="comparison-feature">소프트웨어만 사용하는<br>In the box 믹싱</div></td>
-                            <td><div class="comparison-feature">고가의 하드웨어 장비를 사용하는<br>하이브리드 믹싱</div></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2 class="section-title">포트폴리오</h2>
+            <p style="text-align: center; margin-bottom: 50px; opacity: 0.9;">
+            </p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=40WtnlJwTM8" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4></h4>
+                    <p></p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/QDiAzonNW68" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4></h4>
+                    <p></p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=FydJEfclJYs" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4></h4>
+                    <p></p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=Caizm9GBwzE" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4></h4>
+                    <p></p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=eBFpVXoNg-k" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4></h4>
+                    <p></p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/watch?v=0-aNjBLtHRM" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4></h4>
+                    <p></p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/OJxMfErxMBw" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4></h4>
+                    <p></p>
+                </div>
+                
+                <div class="portfolio-item">
+                    <iframe 
+                        src="https://www.youtube.com/embed/BgXr9mq1EpU" 
+                        frameborder="0" 
+                        allowfullscreen>
+                    </iframe>
+                    <h4></h4>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">진행 과정</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>문의 및 파일 확인</h4>
+                    <p>문의 시 배부해드린 출력<br>가이드라인대로 파일을<br>출력해주세요.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>견적 안내 및<br>입금 확인</h4>
+                    <p>입금 확인이 된 시점부터 작업이 시작됩니다.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>작업 진행</h4>
+                    <p>프리미엄 서비스의 경우<br>작업 참관이 가능하며<br>실시간으로 의견을<br>나눌 수 있습니다.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>초본 완성</h4>
+                    <p>작업이 완료된 1차 파일을 전달하고 필요시 수정 과정을 거칩니다.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>최종본 완성</h4>
+                    <p>최종본 승인 후 부분 출력을 요청하실 수 있습니다.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -853,131 +784,7 @@
         </div>
     </section>
 
-    <section id="process" class="process">
-        <div class="container">
-            <h2 class="section-title">진행 과정</h2>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h4>문의 및 파일 확인</h4>
-                    <p>문의 시 배부해드린 출력<br>가이드라인대로 파일을<br>출력해주세요.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h4>견적 안내 및<br>입금 확인</h4>
-                    <p>입금 확인이 된 시점부터 작업이 시작됩니다.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h4>작업 진행</h4>
-                    <p>프리미엄 서비스의 경우<br>작업 참관이 가능하며<br>실시간으로 의견을<br>나눌 수 있습니다.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h4>초본 완성</h4>
-                    <p>작업이 완료된 1차 파일을 전달하고 필요시 수정 과정을 거칩니다.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h4>최종본 완성</h4>
-                    <p>최종본 승인 후 부분 출력을 요청하실 수 있습니다.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title">포트폴리오</h2>
-            <p style="text-align: center; margin-bottom: 50px; opacity: 0.9;">
-            </p>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/eBFpVXoNg-k?si=KC51CxMspHY5NFMX" 
-                        frameborder="0" 
-                        allowfullscreen>
-                    </iframe>
-                    <h4></h4>
-                    <p></p>
-                </div>
-                
-                <div class="portfolio-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/FydJEfclJYs" 
-                        frameborder="0" 
-                        allowfullscreen>
-                    </iframe>
-                    <h4></h4>
-                    <p></p>
-                </div>
-                
-                <div class="portfolio-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/0-aNjBLtHRM" 
-                        frameborder="0" 
-                        allowfullscreen>
-                    </iframe>
-                    <h4></h4>
-                    <p></p>
-                </div>
-                
-                <div class="portfolio-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/QDiAzonNW68" 
-                        frameborder="0" 
-                        allowfullscreen>
-                    </iframe>
-                    <h4></h4>
-                    <p></p>
-                </div>
-                
-                <div class="portfolio-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/BgXr9mq1EpU" 
-                        frameborder="0" 
-                        allowfullscreen>
-                    </iframe>
-                    <h4></h4>
-                    <p></p>
-                </div>
-                
-                <div class="portfolio-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/wgKFGdjKKII" 
-                        frameborder="0" 
-                        allowfullscreen>
-                    </iframe>
-                    <h4></h4>
-                    <p></p>
-                </div>
-                
-                <div class="portfolio-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/OJxMfErxMBw" 
-                        frameborder="0" 
-                        allowfullscreen>
-                    </iframe>
-                    <h4></h4>
-                    <p></p>
-                </div>
-                
-                <div class="portfolio-item">
-                    <iframe 
-                        src="https://www.youtube.com/embed/51M-eh_my24" 
-                        frameborder="0" 
-                        allowfullscreen>
-                    </iframe>
-                    <h4></h4>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-    </section>
         
     <section id="contact" class="contact">
         <div class="container">
